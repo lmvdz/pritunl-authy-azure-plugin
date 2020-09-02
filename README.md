@@ -53,3 +53,7 @@
 `AUTHY_ONETOUCH_LOGO_LOW_RES=<URL OF A LOW RES LOGO TO USE IN THE AUTHY ONE TOUCH REQUEST>`
 `AUTHY_ONETOUCH_MESSAGE=<AUTHY ONETOUCH MESSAGE TO ACCOMPANY THE LOGO>`
 > example: VPN Login Requested
+
+`MONGODB_HOST=<url of your pritunl mongodb db>`
+`MONGODB_PORT=<port of your pritunl mongodb db>`
+> normal installs of pritunl have defaults of localhost:27017
