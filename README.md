@@ -23,6 +23,8 @@
 
 ![Program Flow](./pritunl-authy-azure-plugin.png)
 
+> Note: The user has 60 seconds to approve the Authy OneTouch
+
 ## Install:
 
 > Download the authy-azure-plugin.py and .env files to your pritunl plugin folder (/var/lib/pritunl/plugins/)
