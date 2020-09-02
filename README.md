@@ -37,8 +37,10 @@
 `GRAPH_SECRET=<MICROSOFT_GRAPH_APP_SECRET>`
 `GRAPH_APP_ID=<MICROSOFT_GRAPH_APP_ID>`
 `TENANT_ID=<MICROSOFT_GRAPH_TENANT_ID>`
-> for all three of these you will need to create an application in Azure https://portal.azure.com/
-> the application permissions must have admin consent to read users' full profile (used to get the mobile phone number) as well as read directory data
+> you will need to create an application in Azure https://portal.azure.com/ 
+
+> the application permissions must have admin consent to read users' full profile (used to get the mobile phone number) as well as read directory data 
+
 > Directory.Read.All and User.Read.All
 
 
