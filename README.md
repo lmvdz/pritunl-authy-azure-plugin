@@ -1,4 +1,4 @@
-# Pritunl Azure Authy Plugin
+# Pritunl VPN Azure Authy Plugin
 
 ## Use Case:
 > You want to secure your Pritunl VPN using Twilio Authy as the 2FA provider
