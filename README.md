@@ -27,12 +27,19 @@
 
 ## Setup:
 
+
+> **You will need to install a few python libraries: authy, phonenumbers, python-dotenv**
+
+> Follow this link to install python libraries to pritunl https://docs.pritunl.com/docs/plugins#adding-python-libraries
+
 > Modify the .env file with valid information
 
 ### Environment File:
 
 `GROUP_BYPASS=<SPACE SEPERATED LIST OF PRITUNL GROUPS TO BYPASS AUTHY 2FA>`
 > example: Group1 Group2 Group3 Group4
+
+> Groups can be added to users manually in the Pritunl Admin UI
 
 `GRAPH_SECRET=<MICROSOFT_GRAPH_APP_SECRET>`
 `GRAPH_APP_ID=<MICROSOFT_GRAPH_APP_ID>`
@@ -63,10 +70,4 @@
 
 > Show your appreciation. Buy me a coffee
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations" />
-<input type="hidden" name="business" value="BGVY9YBFQ5XQC" />
-<input type="hidden" name="currency_code" value="USD" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/xeonpowder21)
