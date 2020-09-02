@@ -53,7 +53,7 @@ def user_connect(host_id, server_id, org_id, user_id, host_name,
 
         # FIND USER IN DB
         user = userDB.find_one({'name': user_name})
-        logger.info('user trying to connect: ' + user_name);
+        logger.info('user trying to connect: ' + user_name, 'authy-azure-plugin');
 
         # TEMP AUTHY_ID
         authy_id = 0
@@ -72,7 +72,7 @@ def user_connect(host_id, server_id, org_id, user_id, host_name,
 
         # AUTHY_ID SETUP
         if user['authy_id'] == '':
-            
+
             # SETUP AUTHY ID
             logger.info('setting up authy_id for ' + user_name);
 
@@ -100,20 +100,20 @@ def user_connect(host_id, server_id, org_id, user_id, host_name,
                 # SETUP OF NEW USER?
                 if newUser.ok():
                     # UPDATE MONGODB WITH AUTHY_ID
-                    logger.info('Registered new authy user associated with: '+user_name, 'authy')
+                    logger.info('Registered new authy user associated with: '+user_name, 'authy-azure-plugin')
                     userDB.update({'name': user_name}, {'$set': {'authy_id': newUser.id}})
                 else:
                     # COULD NOT SETUP NEW USER IN AUTHY
-                    logger.warning('new Authy user not ok', 'authy')
-                    logger.warning(newUser.errors(), 'authy')
+                    logger.warning('new Authy user not ok', 'authy-azure-plugin')
+                    logger.warning(newUser.errors(), 'authy-azure-plugin')
             else:
                 # PHONE NUMBER NOT VALID IN OFFICE 365
-                logger.error(user_name + ' does not have a valid phone number in o365: ' + str(e_one_six_four), 'authy')
+                logger.error(user_name + ' does not have a valid phone number in o365: ' + str(e_one_six_four), 'authy-azure-plugin')
                 return False, user_name + ' does not have a valid phone number in o365'
         else:
-            logger.info('User already has authy_id, '+str(user['authy_id']), 'authy');
+            logger.info('User already has authy_id, '+str(user['authy_id']), 'authy-azure-plugin');
         # START PUSH NOTIFICATION 2FA
-        logger.info('Sent Authy Push Notification to: ' + user_name, 'authy')
+        logger.info('Sent Authy Push Notification to: ' + user_name, 'authy-azure-plugin')
         # SETUP AUTHY PAYLOAD
         details = {
             'Username': user_name
@@ -152,14 +152,14 @@ def user_connect(host_id, server_id, org_id, user_id, host_name,
                     status = authy_api.one_touch.get_approval_status(push_notification.get_uuid())
                     # STATUS APPROVED?
                     if status.content['approval_request']['status'] == "approved":
-                        logger.info(user_name+' Authy 2FA Approved', 'authy')
+                        logger.info(user_name+' Authy 2FA Approved', 'authy-azure-plugin')
                         return True, None
                     else:
                         sleep_interval_index += 1
-                logger.info(user_name +' failed to approve the Authy 2FA Push Notification', 'authy');
+                logger.info(user_name +' failed to approve the Authy 2FA Push Notification', 'authy-azure-plugin');
                 return False, "Authy 2FA Failed"
             else:
-                logger.info('Authy 2FA Push Notification not okay for user: ' + user_name, 'authy');
+                logger.info('Authy 2FA Push Notification not okay for user: ' + user_name, 'authy-azure-plugin');
         else:
-            logger.info('No Authy ID found for user: ' + user_name, 'authy');
+            logger.info('No Authy ID found for user: ' + user_name, 'authy-azure-plugin');
             return False, "No Authy ID found for user: "+user_name
