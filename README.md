@@ -9,9 +9,7 @@
 
 > **Pritunl Azure SSO Login enabled**
 
-> **Authy requires each user to have an E.164 compliant mobile phone number**
-
-> **Each user in Office365 must have an E.164 compliant mobile phone number**
+> **Each user in Office365 must have an E.164 compliant mobile phone number (Authy Requires mobile phone numbers to be E.164 complaint)**
 
 ## Program Flow:
 
