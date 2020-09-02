@@ -1,4 +1,4 @@
-# Pritunl VPN Azure Authy Plugin
+# Pritunl VPN - Authy OneTouch 2FA + Azure - Plugin
 
 ## Use Case:
 > You want to secure your Pritunl VPN using Twilio Authy as the 2FA provider
