@@ -7,16 +7,20 @@
 
 ## Requirements:
 
-> Pritunl Azure SSO Login enabled
+> **Pritunl Azure SSO Login enabled**
 
-> Authy requires each user to have a valid mobile phone number  
+> **Authy requires each user to have an E.164 compliant mobile phone number**
 
-> Each user in Office365 must have an E.164 compliant mobile phone number
+> **Each user in Office365 must have an E.164 compliant mobile phone number**
 
 ## Program Flow:
 
 *Your users must log into the pritunl web portal using Azure SSO.* (This creates a new user in the Pritunl user DB with the correct user_name)
+
+*Your users must use the profile generated from logging in through Azure SSO in their Pritunl Client/OpenVPN Client*
+
 *This is needed as the user_name in pritunl must be their azure email address.* 
+
 *This is the only way to retrieve the correct person's profile data from Microsoft Graph.*
 
 ![Program Flow](./pritunl-authy-azure-plugin.png)
